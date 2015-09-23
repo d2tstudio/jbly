@@ -1,0 +1,47 @@
+head
+  title Jobly
+  link(rel='stylesheet', href='https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css')
+  script(src='https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+
+
+body
+  +layout
+
+template(name="jobs_list")
+  table.mdl-data-table
+    thead
+      tr
+        th.mdl-data-table__cell--non-numeric Material
+        th.mdl-data-table__cell--non-numeric Quantity
+        th.mdl-data-table__cell--non-numeric Unit price
+    tbody
+    each job
+      tr
+        td.mdl-data-table__cell--non-numeric {{company}}
+        td.mdl-data-table__cell--non-numeric {{title}}
+        td.mdl-data-table__cell--non-numeric {{location}}
+
+template(name="jobs")
+  each job
+    h2 {{title}}
+
+template(name="layout")
+  .mdl-layout.mdl-js-layout.mdl-layout--overlay-drawer-button
+    header.mdl-layout__header--transparent
+      .mdl-layout-icon
+      .mdl-layout__header-row
+        span.mdl-layout-title
+        .mdl-layout-spacer
+        nav.mdl-navigation
+          a.mdl-navigation__link(href='#') About
+    .mdl-layout__drawer
+      span.mdl-layout-title Material Design Lite
+      nav.mdl-navigation
+        a.mdl-navigation__link(href='#') Hello
+        a.mdl-navigation__link(href='#') World.
+        a.mdl-navigation__link(href='#') How
+        a.mdl-navigation__link(href='#') Are
+        a.mdl-navigation__link(href='#') You?
+    main.mdl-layout__content
+    +jobs
