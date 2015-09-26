@@ -8,8 +8,9 @@ body
 template(name="jobs")
   each job
     tr
-      td {{company}}
+      td {{company}} 
       td {{title}}
+      td {{type}}
       td {{location}}
 
 template(name="layout")
@@ -17,12 +18,13 @@ template(name="layout")
     table.table
       thead
         tr
-          th Company
+          th Company Name
           th Title
+          th Type
           th Location
       tbody
         +jobs
 
 template(name="head")
-  nav.navbar
+  nav.navbar.navbar-inverse
     a.navbar-brand JBLY
