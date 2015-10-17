@@ -6,6 +6,7 @@ body
 
 template(name="jobs")
   if hasLoaded
+    .jobs
     each job
       li #{company}
         strong #{title}
@@ -15,9 +16,14 @@ template(name="jobs")
     +spinner
 
 template(name="layout")
-  .row
-    .container
-      h4 JBLY
-      .jobs
-        ul
-        +jobs
+  .layout
+    .row
+      .container    
+        .header
+          h4 JBLY
+          p.lead Find great jobs from all over the internets.
+        .jobs
+          ul
+          +jobs
+        .footer
+          © 2015 Derry Birkett
