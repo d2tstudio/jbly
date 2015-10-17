@@ -2,29 +2,19 @@ head
   title Jobly
 
 body
-  +head
   +layout
 
 template(name="jobs")
   each job
-    tr
-      td {{company}} 
-      td {{title}}
-      td {{type}}
-      td {{location}}
+    li #{company}
+      strong #{title}
+      | #{type}
+      | #{location}
 
 template(name="layout")
-  .jobs
-    table.table
-      thead
-        tr
-          th Company Name
-          th Title
-          th Type
-          th Location
-      tbody
+  .row
+    .container
+      h4 JBLY
+      .jobs
+        ul
         +jobs
-
-template(name="head")
-  nav.navbar.navbar-inverse
-    a.navbar-brand JBLY
