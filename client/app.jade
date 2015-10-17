@@ -5,11 +5,14 @@ body
   +layout
 
 template(name="jobs")
-  each job
-    li #{company}
-      strong #{title}
-      | #{type}
-      | #{location}
+  if hasLoaded
+    each job
+      li #{company}
+        strong #{title}
+        | #{type}
+        | #{location}
+  else
+    +spinner
 
 template(name="layout")
   .row
